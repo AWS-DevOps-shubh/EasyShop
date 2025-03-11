@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrate": "ts-node scripts/migrate-data.ts"
+    "migrate": "tsx scripts/migrate-data.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
