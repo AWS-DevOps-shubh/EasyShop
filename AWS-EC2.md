@@ -153,6 +153,7 @@ cd EasyShop
 2. Install dependencies
 ```bash
 npm install
+npm install tsx --save-dev
 ```
 
 3. Set up environment variables
