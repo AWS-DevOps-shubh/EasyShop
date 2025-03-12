@@ -177,6 +177,26 @@ cp .env.example .env.local
 > **Note**: Replace `your-secure-jwt-secret-key` with a secure secret key for JWT token generation. 
 > You can generate one using [JWT Builder Tool](http://jwtbuilder.jamiekurtz.com/) or any other secure JWT generator.
 
+# Database Configuration On AWS EC2 Change the IP Address to local host
+> MONGODB_URI=mongodb://<EC2 IP ADDRESS>:27017/easyshop
+> 
+> # Next.js Configuration
+> NEXTAUTH_URL=http://<EC2 IP ADDRESS>:3000
+> NEXT_PUBLIC_API_URL=http://<EC2 IP ADDRESS>:3000/api
+> 
+> # Authentication
+> JWT_SECRET=your-secure-jwt-secret-key
+> ```
+> 
+> **Note**: Replace `your-secure-jwt-secret-key` with a secure secret key for JWT token generation. 
+> You can generate one using [JWT Builder Tool](http://jwtbuilder.jamiekurtz.com/) or any other secure JWT generator. 
+
+
+J### JWT token generation
+```bash
+openssl rand -hex 32
+```
+
 ### Running the Application
 
 Follow these commands in sequence:
@@ -202,95 +222,6 @@ npm start
 ```
 
 > [!NOTE]
-> - Development server runs on: http://localhost:3000
+> - Development server runs on: http://<EC2 IP ADDRESS>:3000
 > - The migrate command only needs to be run once when setting up the project
 > - Always run `npm run build` before `npm start` in production
-
-## 🧪 Testing
-
-> [!NOTE]
-> Coming soon: Unit tests and E2E tests with Jest and Cypress
-
-## 🔧 Troubleshooting
-
-### Build Errors
-
-1. **Dynamic Server Usage Warnings**
-```bash
-Error: Dynamic server usage: Page couldn't be rendered statically
-```
-**Solution**: This is expected behavior for dynamic routes and API endpoints. These warnings appear during build but won't affect the application's functionality.
-
-2. **MongoDB Connection Issues**
-```bash
-Error: MongoDB connection failed
-```
-**Solution**: 
-- Ensure MongoDB is running locally
-- Check if your MongoDB connection string is correct in `.env.local`
-- Try connecting to MongoDB using MongoDB Compass with the same connection string
-
-### Development Tips
-- Clear `.next` folder if you encounter strange build issues: `rm -rf .next`
-- Run `npm install` after pulling new changes
-- Make sure all environment variables are properly set
-- Use Node.js version 18 or higher
-
-## 📦 Project Structure
-
-```
-easyshop/
-├── src/
-│   ├── app/              # Next.js App Router pages
-│   ├── components/       # Reusable React components
-│   ├── lib/             # Utilities and configurations
-│   │   ├── auth/        # Authentication logic
-│   │   ├── db/          # Database configuration
-│   │   └── features/    # Redux slices
-│   ├── types/           # TypeScript type definitions
-│   └── styles/          # Global styles and Tailwind config
-├── public/              # Static assets
-└── scripts/            # Database migration scripts
-```
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. Fork the repository
-2. Create a new branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Run tests: `npm test` (coming soon)
-5. Commit your changes: `git commit -m 'Add amazing feature'`
-6. Push to the branch: `git push origin feature/amazing-feature`
-7. Open a Pull Request
-
-> [!TIP]
-> Check our [Contributing Guidelines](CONTRIBUTING.md) for more details
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [Radix UI](https://www.radix-ui.com/)
-
-## 📫 Contact
-
-For questions or feedback, please open an issue or contact the maintainers:
-
-- Maintainer - [@Md. Afzal hassan Ehsani](https://github.com/iemafzalhassan)
-- Project Link: [https://github.com/iemafzalhassan/easyshop](https://github.com/iemafzalhassan/easyshop)
-
----
-
-<div align="center">
-  <p>
-    Made with ❤️ by <a href="https://iemafzalhassan.tech" target="_blank"><b>Md. Afzal Hassan Ehsani</b></a>
-  </p>
-</div>
