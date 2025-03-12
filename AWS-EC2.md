@@ -197,7 +197,7 @@ cp .env.example .env.local
  
 
 
-J### JWT token generation
+### JWT token generation
 ```bash
 openssl rand -hex 32
 ```
@@ -227,6 +227,6 @@ npm start
 ```
 
 > [!NOTE]
-> - Development server runs on: http://<EC2 IP ADDRESS>:3000
+> - Development server runs on: http:// <EC2 IP> :3000
 > - The migrate command only needs to be run once when setting up the project
 > - Always run `npm run build` before `npm start` in production
