@@ -177,7 +177,11 @@ cp .env.example .env.local
 > **Note**: Replace `your-secure-jwt-secret-key` with a secure secret key for JWT token generation. 
 > You can generate one using [JWT Builder Tool](http://jwtbuilder.jamiekurtz.com/) or any other secure JWT generator.
 
-# Database Configuration On AWS EC2 Change the IP Address to local host
+
+> [!IMPORTANT]
+> Create a `.env.local` file in the root directory with the following configuration:
+> ```env
+> ### Database Configuration On AWS EC2 Change the IP Address to local host
 > MONGODB_URI=mongodb://<EC2 IP ADDRESS>:27017/easyshop
 > 
 > # Next.js Configuration
@@ -190,6 +194,7 @@ cp .env.example .env.local
 > 
 > **Note**: Replace `your-secure-jwt-secret-key` with a secure secret key for JWT token generation. 
 > You can generate one using [JWT Builder Tool](http://jwtbuilder.jamiekurtz.com/) or any other secure JWT generator. 
+ 
 
 
 J### JWT token generation
